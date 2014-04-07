@@ -1,0 +1,15 @@
+# start ipython ipcluster 8 hyperthreads
+ipcluster start -n 8
+
+export PYRO_SERIALIZERS_ACCEPTED=pickle
+export PYRO_SERIALIZER=pickle
+python -m Pyro4.naming -n 0.0.0.0 &
+python -m gensim.models.lda_worker &
+python -m gensim.models.lda_worker & 
+python -m gensim.models.lda_worker &
+python -m gensim.models.lda_worker &
+python -m gensim.models.lda_worker & 
+python -m gensim.models.lda_worker &
+python -m gensim.models.lda_worker &
+python -m gensim.models.lda_worker & 
+python -m gensim.models.lda_dispatcher &
